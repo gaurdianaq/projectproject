@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://7nstcgoju7lh"]
+
+[ext_resource type="FontFile" uid="uid://bcxcrhe1a4h8t" path="res://fonts/BigBlue_TerminalPlus.TTF" id="1_wdh38"]
+
+[resource]
+font = ExtResource("1_wdh38")
+font_size = 42
