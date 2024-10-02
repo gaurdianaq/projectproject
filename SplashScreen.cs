@@ -24,7 +24,7 @@ public partial class SplashScreen : Control
     private Label continueLbl;
 
     private Key continueKey;
-    private string keyString;
+    private int asciiNumCode;
 
     private List<ScreenData> possibleTitle = new List<ScreenData>();
 
@@ -38,15 +38,15 @@ public partial class SplashScreen : Control
     public override void _Ready()
     {
         Random rnd = new Random();
-        keyString = rnd.Next(33, 91).ToString();
-        continueKey = (Key)Enum.Parse(typeof(Key), keyString);
+        asciiNumCode = rnd.Next(33, 91);
+        continueKey = (Key)asciiNumCode;
         int titleNum = rnd.Next(0, possibleTitle.Count);
         title = GetNode<Label>("Title");
         subTitle = title.GetNode<Label>("Subtitle");
         continueLbl = title.GetNode<Label>("Continue");
         title.Text = possibleTitle[titleNum].Title;
         subTitle.Text = possibleTitle[titleNum].Subtitle;
-        continueLbl.Text = "Press " + (char)Int32.Parse(keyString) + " to continue, any other key will result in termination";
+        continueLbl.Text = "Press " + (char)asciiNumCode + " to continue, any other key will result in termination";
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
