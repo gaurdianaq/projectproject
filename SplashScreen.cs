@@ -7,7 +7,7 @@ using System.Collections.Generic;
 //TODO Set background image programmatically
 public partial class SplashScreen : Control
 {
-	private class ScreenData
+	private struct ScreenData
 	{
 		public string Title { get; set; }
 		public string Subtitle { get; set; }
@@ -17,8 +17,8 @@ public partial class SplashScreen : Control
 			Title = title;
 			Subtitle = subtitle;
 		}
-
 	}
+
 	private Label title;
 	private Label subTitle;
 	private Label continueLbl;
