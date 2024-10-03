@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt4gtu6ovn16"]
+[gd_scene load_steps=4 format=3 uid="uid://dt4gtu6ovn16"]
 
 [ext_resource type="Texture2D" uid="uid://dnqlgfw3gwkxy" path="res://backgrounds/pixel_space.jpg" id="1_37ep0"]
 [ext_resource type="Texture2D" uid="uid://cpf5gw40hwpuu" path="res://sprites/playerShip1_blue.png" id="2_47n6r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qo5gd"]
 
 [node name="main_game" type="Node2D"]
 
@@ -10,9 +12,12 @@ scale = Vector2(0.609, 0.6)
 texture = ExtResource("1_37ep0")
 centered = false
 
-[node name="player" type="Node2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(579.135, 506.85)
 
 [node name="player_sprite" type="Sprite2D" parent="player"]
-position = Vector2(571, 501)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_47n6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource("CircleShape2D_qo5gd")
