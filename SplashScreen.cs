@@ -28,9 +28,9 @@ public partial class SplashScreen : Control
 
 	private readonly List<ScreenData> possibleTitle = new()
 	{ 
-		new("Booty Slayer", "A Pirates Hunt for Mimics"),
+		new("Booty Slayer", "A Pirate's Hunt for Mimics"),
 		new("Living Chocolate Hunter", "Quest for Deliciousness"),
-		new("Trogdors Day Out", "Burnination Has Arrived!")
+		new("Trogdor's Day Out", "Burnination Has Arrived!")
 	};
 
 	public override void _EnterTree()
