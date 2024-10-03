@@ -24,7 +24,6 @@ public partial class SplashScreen : Control
 	private Label continueLbl;
 
     private Key continueKey;
-	private int asciiNumCode;
 
 	private readonly Random rnd = new();
 	private readonly List<ScreenData> possibleTitle = new()
@@ -40,15 +39,18 @@ public partial class SplashScreen : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		asciiNumCode = rnd.Next(33, 91);
-		continueKey = (Key)asciiNumCode;
-		int titleNum = rnd.Next(0, possibleTitle.Count);
 		title = GetNode<Label>("Title");
 		subTitle = title.GetNode<Label>("Subtitle");
 		continueLbl = title.GetNode<Label>("Continue");
+
+		int asciiNumCode = rnd.Next(33, 91);
+		int titleNum = rnd.Next(0, possibleTitle.Count);
+
+		continueKey = (Key)asciiNumCode;
+		continueLbl.Text = "Press " + (char)asciiNumCode + " to continue, any other key will result in termination";
+
 		title.Text = possibleTitle[titleNum].Title;
 		subTitle.Text = possibleTitle[titleNum].Subtitle;
-		continueLbl.Text = "Press " + (char)asciiNumCode + " to continue, any other key will result in termination";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
