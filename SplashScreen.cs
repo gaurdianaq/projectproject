@@ -26,11 +26,11 @@ public partial class SplashScreen : Control
 	private Key continueKey;
 	private int asciiNumCode;
 
-	private readonly List<ScreenData> possibleTitle = new List<ScreenData>()
+	private readonly List<ScreenData> possibleTitle = new()
 	{ 
-		new ScreenData("Booty Slayer", "A Pirates Hunt for Mimics"),
-		new ScreenData("Living Chocolate Hunter", "Quest for Deliciousness"),
-		new ScreenData("Trogdors Day Out", "Burnination Has Arrived!")
+		new("Booty Slayer", "A Pirates Hunt for Mimics"),
+		new("Living Chocolate Hunter", "Quest for Deliciousness"),
+		new("Trogdors Day Out", "Burnination Has Arrived!")
 	};
 
 	public override void _EnterTree()
@@ -39,7 +39,7 @@ public partial class SplashScreen : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Random rnd = new Random();
+		Random rnd = new();
 		asciiNumCode = rnd.Next(33, 91);
 		continueKey = (Key)asciiNumCode;
 		int titleNum = rnd.Next(0, possibleTitle.Count);
