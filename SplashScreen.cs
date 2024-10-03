@@ -23,9 +23,10 @@ public partial class SplashScreen : Control
 	private Label subTitle;
 	private Label continueLbl;
 
-	private Key continueKey;
+    private Key continueKey;
 	private int asciiNumCode;
 
+	private readonly Random rnd = new();
 	private readonly List<ScreenData> possibleTitle = new()
 	{ 
 		new("Booty Slayer", "A Pirate's Hunt for Mimics"),
@@ -39,7 +40,6 @@ public partial class SplashScreen : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Random rnd = new();
 		asciiNumCode = rnd.Next(33, 91);
 		continueKey = (Key)asciiNumCode;
 		int titleNum = rnd.Next(0, possibleTitle.Count);
