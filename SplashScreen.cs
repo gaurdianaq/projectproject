@@ -23,7 +23,7 @@ public partial class SplashScreen : Control
 	private Label subTitle;
 	private Label continueLbl;
 
-    private Key continueKey;
+	private Key continueKey;
 
 	private readonly Random rnd = new();
 	private readonly List<ScreenData> possibleTitle = new()
@@ -47,7 +47,7 @@ public partial class SplashScreen : Control
 		int titleNum = rnd.Next(0, possibleTitle.Count);
 
 		continueKey = (Key)asciiNumCode;
-		continueLbl.Text = "Press " + (char)asciiNumCode + " to continue, any other key will result in termination";
+		continueLbl.Text = $"Press {(char)asciiNumCode} to continue, any other key will result in termination";
 
 		title.Text = possibleTitle[titleNum].Title;
 		subTitle.Text = possibleTitle[titleNum].Subtitle;
