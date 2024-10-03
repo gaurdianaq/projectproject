@@ -43,11 +43,10 @@ public partial class SplashScreen : Control
 		subTitle = title.GetNode<Label>("Subtitle");
 		continueLbl = title.GetNode<Label>("Continue");
 
-		int asciiNumCode = rnd.Next(33, 91);
+		continueKey = (Key)rnd.Next(33, 91);
 		int titleNum = rnd.Next(0, possibleTitle.Count);
 
-		continueKey = (Key)asciiNumCode;
-		continueLbl.Text = $"Press {(char)asciiNumCode} to continue, any other key will result in termination";
+		continueLbl.Text = $"Press {continueKey} to continue, any other key will result in termination";
 
 		title.Text = possibleTitle[titleNum].Title;
 		subTitle.Text = possibleTitle[titleNum].Subtitle;
