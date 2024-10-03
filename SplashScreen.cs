@@ -64,7 +64,7 @@ public partial class SplashScreen : Control
 			if (keyEvent.Pressed && keyEvent.Keycode == continueKey)
 			{
 				GD.Print("you chose wisely");
-				//TODO add scene transition logic
+				GetTree().ChangeSceneToFile("res://main_game.tscn");
 			}
 			else if (keyEvent.IsReleased() && keyEvent.Keycode != continueKey && keyEvent.Keycode != Key.Shift)
 			{
