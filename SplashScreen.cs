@@ -56,16 +56,16 @@ public partial class SplashScreen : Control
 	{
 	}
 	//TODO figure out how to handle combo keys for things like # or &, or just include a silly message telling the user they have poor luck and to restart the app
-	public override void _UnhandledInput(InputEvent @event)
+	public override void _UnhandledInput(InputEvent inputEvent)
 	{
-		if (@event is InputEventKey eventKey)
+		if (inputEvent is InputEventKey keyEvent)
 		{
-			if (eventKey.Pressed && eventKey.Keycode == continueKey)
+			if (keyEvent.Pressed && keyEvent.Keycode == continueKey)
 			{
 				GD.Print("you chose wisely");
 				//TODO add scene transition logic
 			}
-			else if (eventKey.IsReleased() && eventKey.Keycode != continueKey && eventKey.Keycode != Key.Shift)
+			else if (keyEvent.IsReleased() && keyEvent.Keycode != continueKey && keyEvent.Keycode != Key.Shift)
 			{
 				GD.Print("You have chosen termination");
 				GetTree().Quit();
