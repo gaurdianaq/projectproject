@@ -8,7 +8,7 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 inputVec = Input.GetVector("left", "right", "up", "down");
-		Velocity = inputVec * Speed;
+		Velocity = inputVec.Normalized() * Speed;
 		
 		MoveAndSlide();
 	}
