@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv33ptkxsggle"]
 
 [ext_resource type="Texture2D" uid="uid://cci2djmswqu5o" path="res://backgrounds/mountains/parallax_mountain_pack/parallax_mountain_pack/layers/parallax-mountain-bg.png" id="1_hirve"]
-[ext_resource type="Script" path="res://SplashScreen.cs" id="1_iyomy"]
+[ext_resource type="Script" path="res://scripts/SplashScreen.cs" id="1_iyomy"]
 [ext_resource type="LabelSettings" uid="uid://4lsxscrd2jo5" path="res://Title.tres" id="3_qn0lk"]
 [ext_resource type="LabelSettings" uid="uid://7nstcgoju7lh" path="res://SubTitle.tres" id="4_ce3b1"]
 
